@@ -34,7 +34,7 @@ const Loader: React.FC<LoaderProps> = ({ duration = 7000 }) => {
       
       <h2 className="mt-6 text-2xl font-bold text-amber-800 animate-fade-in">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-red-500 to-amber-600">
-          Ganpati Bappa Morya, Mangal Murti Morya...
+         Shri Ganesh Chaturthi 2025
         </span>
       </h2>
       
