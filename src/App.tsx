@@ -357,8 +357,9 @@ function App() {
             "Cultural program seating",
             "Prasadam meal voucher",
             "Festival souvenir",
-            "Parking facility",
-            "Photography permissions"
+            "Engaging games & fun activities",
+            "Photography permissions",
+            "DJ on last night",
           ].map((item, index) => (
             <li key={index} className="flex items-center space-x-3">
               <span className="w-2 h-2 bg-amber-500 rounded-full"></span>

@@ -48,8 +48,8 @@ const HighlightsSection: React.FC = () => {
     },
     {
       icon: "bi bi-info-circle",
-      title: "Learning Sessions",
-      description: "Daily talks on mythology, spirituality and culture",
+      title: "Engaging Games",
+      description: "Fun games and activities for all age groups",
       color: "indigo"
     }
   ];
