@@ -53,16 +53,15 @@ const FindUsSection: React.FC = () => {
                 <div>
                   <p className="text-sm font-medium text-gray-700">Address:</p>
                   <p className="text-sm text-gray-600">
-                    Shree Ganesh Temple Complex<br />
                     Yello Living, Pattandur Agrahara<br />
-                    Bangalore - 560037
+                    Bangalore - 560066
                   </p>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-700">Landmarks:</p>
                   <p className="text-sm text-gray-600">
                     Near Electronic City Phase 1<br />
-                    Opposite to Infosys Mysore Road
+                    ITPL Tech park, Whitefield
                   </p>
                 </div>
               </div>

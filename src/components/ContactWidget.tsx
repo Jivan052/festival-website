@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Phone, Mail, X } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const ContactWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +32,7 @@ const ContactWidget: React.FC = () => {
               className="flex items-center space-x-2 p-2 hover:bg-amber-50 rounded-md transition-colors text-gray-700 text-sm"
             >
               <Phone className="w-4 h-4 text-amber-600" />
-              <span>+91 98765 43210</span>
+              <span>+91 89822 12004</span>
             </a>
             
             <a
@@ -38,18 +40,18 @@ const ContactWidget: React.FC = () => {
               className="flex items-center space-x-2 p-2 hover:bg-amber-50 rounded-md transition-colors text-gray-700 text-sm"
             >
               <Mail className="w-4 h-4 text-amber-600" />
-              <span>info@ganeshutsav2024.com</span>
+              <span>ganeshutsav2025@gmail.com</span>
             </a>
-            
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md text-sm transition-all duration-300 text-center mt-2"
-            >
-              <MessageCircle className="inline-block w-4 h-4 mr-1" />
-              WhatsApp Us
-            </a>
+                            <a
+                              href="https://wa.me/919876543210"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md text-sm transition-all duration-300 flex items-center justify-center flex-1"
+                            >
+                              <FaWhatsapp className="w-4 h-4 mr-1" />
+                              Main Group
+                            </a>
+
           </div>
         </div>
       )}

@@ -22,11 +22,15 @@ const ContactSection: React.FC = () => {
             <div className="space-y-3 flex-grow">
               <div className="flex items-center space-x-2 text-gray-700">
                 <FaPhone className="w-4 h-4 text-amber-600" />
-                <a href="tel:+919876543210" className="hover:text-amber-600 transition-colors text-sm">+91 98765 43210</a>
+                <a href="tel:+919876543210" className="hover:text-amber-600 transition-colors text-sm"> Rishit Kumar (+91 89822 12004)</a>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-700">
+                <FaPhone className="w-4 h-4 text-amber-600" />
+                <a href="tel:+919876543210" className="hover:text-amber-600 transition-colors text-sm"> Ayush Gautam (+91 76661 23582)</a>
               </div>
               <div className="flex items-center space-x-2 text-gray-700">
                 <Mail className="w-4 h-4 text-amber-600" />
-                <a href="mailto:info@ganeshutsav2024.com" className="hover:text-amber-600 transition-colors text-sm truncate">info@ganeshutsav2024.com</a>
+                <a href="mailto:info@ganeshutsav2024.com" className="hover:text-amber-600 transition-colors text-sm truncate">ganeshutsav2025@gmail.com</a>
               </div>
             </div>
           </div>

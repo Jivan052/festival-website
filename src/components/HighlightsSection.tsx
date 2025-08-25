@@ -13,13 +13,13 @@ const HighlightsSection: React.FC = () => {
     {
       icon: "bi bi-music-note-beamed",
       title: "Devotional Music",
-      description: "Morning and evening aarti with live bhajan sessions",
+      description: "Morning and evening aarti with live special activities",
       color: "red"
     },
     {
       icon: "bi bi-cup-hot",
       title: "Prasadam & Feasts",
-      description: "Sacred food offerings and community meals daily",
+      description: "Sacred food offerings and community meals",
       color: "green"
     },
     {
@@ -30,14 +30,14 @@ const HighlightsSection: React.FC = () => {
     },
     {
       icon: "bi bi-gift",
-      title: "Community Gifts",
-      description: "Special gift distributions for children and seniors",
+      title: "Community events",
+      description: "Special events from student community",
       color: "purple"
     },
     {
       icon: "bi bi-heart",
       title: "Charity Initiatives",
-      description: "Fundraising activities for local causes",
+      description: "Orphanage kids Maha Prasad & Gift Distribution",
       color: "pink"
     },
     {

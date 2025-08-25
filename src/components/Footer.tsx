@@ -1,5 +1,7 @@
 import React from 'react';
 import { Sparkles, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
@@ -76,9 +78,9 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
           <div>
             <h3 className="text-base font-semibold mb-3">Contact</h3>
             <ul className="space-y-1 text-sm text-gray-300">
-              <li>+91 98765 43210</li>
-              <li>info@ganeshutsav2025.com</li>
-              <li>Pattandur Agrahara, Bangalore</li>
+              <li>+91 76661 23582</li>
+              <li>ganeshutsav2025@gmail.com</li>
+              <li>Yello Living, Pattandur Agrahara, Bangalore</li>
               <li>Daily: 6 AM - 10 PM</li>
             </ul>
           </div>
@@ -87,17 +89,11 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
           <div>
             <h3 className="text-base font-semibold mb-3">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-pink-400 transition-colors">
+              <a href="https://www.instagram.com/reel/DNv68TD3Jht/?igsh=ZHZkaXphcjNsaGk4" className="text-gray-300 hover:text-pink-400 transition-colors">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
-                <Youtube className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
-                <MessageCircle className="w-6 h-6" />
+              <a href="https://wa.me/919876543210" className="text-gray-300 hover:text-green-400 transition-colors">
+                <FaWhatsapp className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -106,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
         {/* Copyright */}
         <div className="border-t border-gray-700 pt-4 text-center">
           <p className="text-gray-400 text-xs">
-            © PWIOI Ganesh Utsav 2025. Made with love for the community.
+            © PWIOI Shri Ganesh Utsav 2025. Made with love for the community.
           </p>
         </div>
       </div>

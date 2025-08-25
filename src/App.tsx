@@ -21,7 +21,6 @@ import ContactSection from './components/ContactSection';
 import FindUsSection from './components/FindUsSection';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-import SmallTimer from './components/SmallTimer';
 import Loader from './components/Loader';
 import ContactWidget from './components/ContactWidget';
 import HighlightsSection from './components/HighlightsSection';
@@ -133,9 +132,6 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-yellow-50">
       {/* Loader Component */}
       {isLoading && <Loader duration={1000} />}
-      
-      {/* Small Timer Component */}
-      <SmallTimer festivalDate="2024-09-19T00:00:00" />
       
       {/* Contact Widget */}
       <ContactWidget />
@@ -255,14 +251,14 @@ function App() {
           <div className="space-y-4">
             {[
               {
-                day: "Day 1 - Ganesh Chaturthi",
+                day: "Day 1 - Shri Ganesh Aagaman",
                 date: "Aug 27, 2025",
                 description: "The grand installation ceremony marking the beginning of our 10-day celebration",
                 events: [
-                  { time: "6:00 AM", event: "Prana Pratishtha (Installation)", link: "https://example.com/installation" },
-                  { time: "7:00 AM", event: "Morning Aarti & Prayers", link: null },
-                  { time: "12:00 PM", event: "Afternoon Bhajan", link: "https://example.com/bhajan" },
-                  { time: "7:00 PM", event: "Evening Aarti & Cultural Program", link: null }
+                  { time: "8:00 AM", event: "Prana Pratishtha (Installation)"},
+                  { time: "9:00 AM", event: "Morning Aarti & Prayers"},
+                  { time: "12:00 PM", event: "Darshan Period"},
+                  { time: "7:30 PM onwards", event: "Evening Aarti & Cultural Program"},
                 ]
               },
               {
@@ -270,10 +266,10 @@ function App() {
                 date: "Aug 28, 2025",
                 description: "Daily worship, cultural programs, and community activities throughout the festival",
                 events: [
-                  { time: "6:00 AM", event: "Morning Aarti", link: null },
-                  { time: "11:00 AM", event: "Abhishek & Special Prayers", link: "https://example.com/abhishek" },
-                  { time: "4:00 PM", event: "Children's Programs", link: "https://example.com/children" },
-                  { time: "7:30 PM", event: "Evening Aarti & Cultural Events", link: null }
+                  { time: "7:30 AM", event: "Morning Aarti"},
+                  { time: "9:00 AM", event: "Shri Ganesh Darshan"},
+                  { time: "5:30 PM", event: "MahaSatyanarayan Puja & Maha Aarti"},
+                  { time: "7:00 PM", event: "Maha Prasad Distribution"}
                 ]
               },
               {
@@ -281,10 +277,10 @@ function App() {
                 date: "Aug 29, 2025",
                 description: "The grand finale with procession and immersion ceremony bidding farewell to Lord Ganesha",
                 events: [
-                  { time: "8:00 AM", event: "Final Morning Aarti", link: null },
-                  { time: "2:00 PM", event: "Grand Procession Begins", link: "https://example.com/procession" },
-                  { time: "4:00 PM", event: "Community Immersion Ceremony", link: null },
-                  { time: "6:00 PM", event: "Farewell Prayers", link: null }
+                  { time: "8:00 AM", event: "Morning Aarti"},
+                  { time: "2:00 PM", event: "Grand Procession Begins"},
+                  { time: "4:00 PM", event: "Community Immersion Ceremony"},
+                  { time: "5:00 PM", event: "Farewell Prayers Aarti & Grand Visarjan"}
                 ]
               }
             ].map((schedule, index) => (
@@ -313,22 +309,6 @@ function App() {
                           </div>
                           <span className="text-gray-700 flex-1">{event.event}</span>
                         </div>
-                        <div className="flex items-center space-x-2">
-                          {event.link && (
-                            <a
-                              href={event.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-2 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors"
-                            >
-                              <Link className="w-4 h-4" />
-                            </a>
-                          )}
-                          <button className="px-3 py-2 bg-amber-100 text-amber-700 rounded-full text-sm hover:bg-amber-200 transition-colors min-h-[44px] flex items-center">
-                            <Calendar className="w-4 h-4 mr-1" />
-                            Add to Calendar
-                          </button>
-                        </div>
                       </div>
                     ))}
                     </div>
@@ -342,82 +322,73 @@ function App() {
       {/* Ticket Booking */}
       <section id="tickets" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Book Your Experience</h2>
-        <p className="text-xl text-gray-600">Secure your spot for special programs and VIP darshan</p>
-          </div>
-          
-          <div className="bg-white rounded-xl shadow-xl p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">What's Included:</h3>
-            <ul className="space-y-3">
-          {[
-            "Priority darshan access",
-            "Cultural program seating",
-            "Prasadam meal voucher",
-            "Festival souvenir",
-            "Engaging games & fun activities",
-            "Photography permissions",
-            "DJ on last night",
-          ].map((item, index) => (
-            <li key={index} className="flex items-center space-x-3">
-              <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
-              <span className="text-gray-700">{item}</span>
-            </li>
-          ))}
-            </ul>
-          </div>
-          
-          <div className="text-center">
-            <div className="mb-6">
-          <span className="text-4xl font-bold text-amber-600">₹151</span>
-          <span className="text-gray-600 text-lg">/person</span>
+            <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Book Your Experience</h2>
+            <p className="text-xl text-gray-600">Secure your spot for special programs and VIP darshan</p>
             </div>
             
-            <h3 className="text-lg font-medium text-gray-700 mb-4">Book through your preferred platform:</h3>
-            
-            <div className="grid grid-cols-2 gap-4 mb-6">
-          <a href="https://in.bookmyshow.com" target="_blank" rel="noopener noreferrer"
-             className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-amber-500 transition-colors">
-            <img src="https://assets-in.bmscdn.com/webin/common/icons/logo.svg" alt="BookMyShow" 
-             className="h-8 object-contain mb-2" />
-            <span className="text-sm text-gray-700">BookMyShow</span>
-          </a>
-          
-          <a href="https://lu.ma" target="_blank" rel="noopener noreferrer"
-             className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-amber-500 transition-colors">
-            <img src="https://lu.ma/favicon.ico" alt="Luma" 
-             className="h-8 object-contain mb-2" />
-            <span className="text-sm text-gray-700">Luma</span>
-          </a>
-          
-          <a href="https://allevents.in" target="_blank" rel="noopener noreferrer"
-             className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-amber-500 transition-colors">
-            <img src="https://allevents.in/img/ae-logo-website.png" alt="All Events" 
-             className="h-8 object-contain mb-2" />
-            <span className="text-sm text-gray-700">All Events</span>
-          </a>
-          
-          <a href="#contact" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-             className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-amber-500 transition-colors">
-            <div className="h-8 flex items-center justify-center mb-2">
-              <Share2 className="w-6 h-6 text-amber-600" />
+            <div className="bg-white rounded-xl shadow-xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">What's Included:</h3>
+              <ul className="space-y-3">
+                {[
+                "Priority darshan access",
+                "Cultural program seating",
+                "Prasadam meal voucher",
+                "Festival souvenir",
+                "Engaging games & fun activities",
+                "Photography permissions",
+                "DJ night & grand Visarjan",
+                ].map((item, index) => (
+                <li key={index} className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
+                  <span className="text-gray-700">{item}</span>
+                </li>
+                ))}
+              </ul>
+              </div>
+              
+              <div className="text-center">
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-amber-600">₹151</span>
+                <span className="text-gray-600 text-lg">/person</span>
+                <div className="mt-2 bg-red-50 border border-red-200 rounded-md px-3 py-1.5">
+                <p className="text-sm font-medium text-red-600">Book fast, seats are filling out!</p>
+                </div>
+              </div>
+              
+              <h3 className="text-lg font-medium text-gray-700 mb-4">We are also available on:</h3>
+              
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <a href="https://lu.ma" target="_blank" rel="noopener noreferrer"
+                 className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-amber-500 transition-colors">
+                <img src="https://lu.ma/favicon.ico" alt="Luma" 
+                  className="h-8 object-contain mb-2" />
+                <span className="text-sm text-gray-700">Luma</span>
+                </a>
+                
+                <a href="https://allevents.in" target="_blank" rel="noopener noreferrer"
+                 className="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-lg hover:border-amber-500 transition-colors">
+                <img src="https://allevents.in/img/ae-logo-website.png" alt="All Events" 
+                  className="h-8 ml-20 w-auto object-contain mb-2" />
+                <span className="text-sm text-center text-gray-700">All Events</span>
+                </a>
+              </div>
+              <a 
+                href="https://forms.gle/example1234" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-full px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-h-[44px] flex items-center justify-center shadow-lg"
+              >
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Book Directly Now
+              </a>
+              <p className="text-sm text-gray-500 mt-4">
+                Booking opens in new tab for optimal mobile experience
+              </p>
+              </div>
             </div>
-            <span className="text-sm text-gray-700">Contact Us</span>
-          </a>
-            </div>
-            
-            <button className="w-full px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-h-[44px] flex items-center justify-center shadow-lg">
-          <ExternalLink className="w-5 h-5 mr-2" />
-          Book Directly Now
-            </button>
-            
-            <p className="text-sm text-gray-500 mt-4">
-          Booking opens in new tab for optimal mobile experience
-            </p>
-          </div>
-        </div>
           </div>
         </div>
       </section>
